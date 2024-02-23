@@ -1,0 +1,54 @@
+#+OPTIONS: ^:nil tags:nil num:nil
+
+* About
+
+Addional commands for company.
+
+* Table of Contents                                       :TOC_2_gh:QUOTE:
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#requirements][Requirements]]
+- [[#installation][Installation]]
+  - [[#with-use-package-and-straightel][With use-package and straight.el]]
+  - [[#manual-installation][Manual installation]]
+#+END_QUOTE
+
+* Requirements
+
+| Name      | Version |
+|-----------+---------|
+| Emacs     |    25.1 |
+| ~company~ |  0.10.1 |
+
+
+* Installation
+
+** With use-package and straight.el
+#+begin_src elisp :eval no
+(use-package company-extra
+  :after (company)
+  :demand t
+  :straight (company-extra
+             :repo "KarimAziev/company-extra"
+             :type git
+             :host github)
+  :bind (:package company
+         :map company-active-map
+         ("C-M-n" . company-extra-select-next-and-show-doc)
+         ("C-M-p" . company-extra-select-previous-and-show-doc)))
+#+end_src
+
+** Manual installation
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/company-extra/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/company-extra.git ~/.emacs.d/company-extra/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+(add-to-list 'load-path "~/.emacs.d/company-extra/")
+(require 'company-extra)
+#+end_src
