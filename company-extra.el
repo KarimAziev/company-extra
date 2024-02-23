@@ -124,5 +124,17 @@ Optional argument ARG specifies the number of candidates to move backward."
   (interactive "p")
   (company-extra-select-next-and-show-doc (if arg (- arg) -1)))
 
+;;;###autoload
+(defun company-extra-manual-begin-or-other-backend ()
+  "Invoke manual completion or switch to another backend."
+  (interactive)
+  (or
+   (let ((message-log-max nil)
+         (inhibit-message t))
+     (company-manual-begin))
+   (company-other-backend)))
+
+
+
 (provide 'company-extra)
 ;;; company-extra.el ends here
