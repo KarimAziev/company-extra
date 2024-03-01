@@ -134,6 +134,13 @@ Optional argument ARG specifies the number of candidates to move backward."
      (company-manual-begin))
    (company-other-backend)))
 
+;;;###autoload
+(defun company-extra-select-next ()
+  "Display current company backend and switch to the next one."
+  (interactive)
+  (minibuffer-message (format "company backend: %s" company-backend))
+  (funcall-interactively #'company-other-backend))
+
 
 
 (provide 'company-extra)
