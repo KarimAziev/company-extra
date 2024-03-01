@@ -128,11 +128,11 @@ Optional argument ARG specifies the number of candidates to move backward."
 (defun company-extra-manual-begin-or-other-backend ()
   "Invoke manual completion or switch to another backend."
   (interactive)
-  (or
-   (let ((message-log-max nil)
-         (inhibit-message t))
-     (company-manual-begin))
-   (company-other-backend)))
+  (let ((message-log-max nil)
+        (inhibit-message t))
+    (or
+     (company-manual-begin)
+     (company-other-backend))))
 
 ;;;###autoload
 (defun company-extra-select-next ()
