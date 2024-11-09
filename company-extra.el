@@ -77,9 +77,9 @@ Argument ARGS is a list of additional arguments that will be passed to the FN."
   "Cancel a timer if it exists and set the value of TIMER-SYM to nil.
 
 Argument TIMER-SYM is a symbol that represents the timer to be canceled."
-  (when-let ((timer-value (symbol-value timer-sym)))
+  (when-let* ((timer-value (symbol-value timer-sym)))
     (when (timerp timer-value)
-      
+
       (cancel-timer timer-value)
       (set timer-sym nil))))
 
