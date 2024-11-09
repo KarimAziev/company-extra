@@ -6,7 +6,7 @@
 ;; URL: https://github.com/KarimAziev/company-extra
 ;; Version: 0.1.0
 ;; Keywords: convenience
-;; Package-Requires: ((emacs "25.1") (company "0.10.1"))
+;; Package-Requires: ((emacs "26.1") (company "1.0.0"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is NOT part of GNU Emacs.

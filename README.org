@@ -17,7 +17,7 @@ Addional commands for company.
 
 | Name      | Version |
 |-----------+---------|
-| Emacs     |    25.1 |
+| Emacs     |    26.1 |
 | ~company~ |  0.10.1 |
 
 
